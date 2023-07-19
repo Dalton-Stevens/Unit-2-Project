@@ -1,8 +1,8 @@
 import MovieCard from "./MovieCard";
 
-const MovieScreen = ({ watchlist, page, setPage, movieList }) => {
+const MovieScreen = ({ list, page, setPage, movieList, addMovie }) => {
   const movieDisplay = movieList.map((movie) => {
-    return <MovieCard movie={movie} />;
+    return <MovieCard movie={movie} addMovie={addMovie} />;
   });
 
   return (
