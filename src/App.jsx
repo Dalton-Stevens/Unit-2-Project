@@ -31,6 +31,13 @@ function App() {
     setList([...list, movie]);
   };
 
+  const removeMovie = (movie) => {
+    const newState = list.filter((mov) => {
+      return mov !== movie;
+    });
+    setList(newState);
+  };
+
   return (
     <div className="App">
       <Header />
@@ -41,8 +48,9 @@ function App() {
           setPage={setPage}
           movieList={movieList}
           addMovie={addMovie}
+          removeMovie={removeMovie}
         />
-        <Watchlist list={list} />
+        <Watchlist list={list} removeMovie={removeMovie} />
       </main>
     </div>
   );
